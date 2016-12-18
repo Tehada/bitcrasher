@@ -1,6 +1,8 @@
 from six.moves import urllib
 import tensorflow as tf
 
+from tensorflow.models.image.dibco import dibco_input
+
 FLAGS = tf.app.flags.FLAGS
 
 # Model parameters
