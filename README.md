@@ -31,10 +31,3 @@ minidjvu (sourceforge)
 
 http://bc.klf.uw.edu.pl/298/6/JSBatal_Library-12s.pdf
 https://jwilk.net/software/didjvu и др.
-
-
-
-
-
-
-
