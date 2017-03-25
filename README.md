@@ -12,6 +12,7 @@
 
 ![alt tag](https://github.com/Tehada/Bitcrasher/blob/master/images/compare/3.jpg)
 
+Еще примеры в директории images/compare
 
 ------------ Comments (A.S.) ---------
 
