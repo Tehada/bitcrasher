@@ -12,7 +12,7 @@
 
 ![alt tag](https://github.com/Tehada/Bitcrasher/blob/master/images/compare/3.jpg)
 
-В [image][first] собраны все тестовые результаты. Директория [original][second] содержит исходные изображения в формате pgm. В директории [djvulibre][third] результат работы утилиты [cpaldjvu][fourth] в формате pbm. В том же формате хранятся результаты работы [simpledjvu][fifth] и [bitcrasher][sixth] в соответствующих директориях. В [compare][seventh] содержатся склеенные изображения пониженного качества для визуального сравнения в качестве работы.
+В [image][first] собраны все тестовые результаты. Директория [original][second] содержит исходные изображения в формате pgm. В директории [djvulibre][third] результат работы утилиты [cpaldjvu][fourth] в формате pbm. В том же формате хранятся результаты работы simpledjvu и bitcrasher в [simpledjvu][fifth] и [bitcrasher][sixth]. В [compare][seventh] содержатся склеенные изображения пониженного качества для визуального сравнения в качестве работы.
 
 [first]: https://github.com/Tehada/Bitcrasher/tree/master/images
 [second]: https://github.com/Tehada/Bitcrasher/tree/master/images/original
