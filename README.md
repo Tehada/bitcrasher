@@ -10,7 +10,8 @@
 
 В левом верхнем углу оригинальное изображение, далее по часовой стрелке: djvulibre, bitcrasher, simpledjvu.
 
-<ing src="https://raw.githubusercontent.com/Tehada/Bitcrasher/blob/master/images/compare/1.jpg" height="223px">
+![alt tag](https://github.com/Tehada/Bitcrasher/blob/master/images/compare/1.jpg)
+
 
 ------------ Comments (A.S.) ---------
 
