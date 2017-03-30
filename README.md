@@ -26,7 +26,7 @@
 
 В левом верхнем углу оригинальное изображение, далее по часовой стрелке: djvulibre, bitcrasher, simpledjvu.
 
-![alt tag](https://github.com/Tehada/Bitcrasher/blob/master/images/compare/1.jpg =200x400)
+![](./images/compare/1.jpg =200x400)
 
 В [image][first] собраны все тестовые результаты. Директория [original][second] содержит исходные изображения в формате pgm. В директории [djvulibre][third] результат работы утилиты [cpaldjvu][fourth] в формате pbm. В том же формате хранятся результаты работы simpledjvu и bitcrasher в [simpledjvu][fifth] и [bitcrasher][sixth]. В [compare][seventh] содержатся склеенные изображения пониженного качества, но небольшого размера.
 
