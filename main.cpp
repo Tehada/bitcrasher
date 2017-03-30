@@ -17,10 +17,10 @@ int main(int argc, char** argv) {
     /*resize to divide into 64x64 blocks*/
     Size new_size = image.size();
     //std::cout << new_size.height << " " << new_size.width << std::endl;
-    int height = new_size.height, width = new_size.width;
     new_size.width -= new_size.width % 64;
     new_size.height -= new_size.height % 64;
     resize(image, image, new_size, 0, 0, INTER_NEAREST);//check
+    int height = image.rows, width = image.cols;
 
     /*create matrix path walk*/
     Mat order = order_basis_functions(block_size);
@@ -28,9 +28,9 @@ int main(int argc, char** argv) {
     Mat DCT_1d = Mat::zeros(block_size * block_size, block_size * block_size, CV_64F);
     Mat temp, reshaped;
     double p, q; //may be int???
-    int index, k;
+    int index;
 
-    for (i = 0; i != std::pow(block_size, 2); ++i) {
+    for (int i = 0; i != std::pow(block_size, 2); ++i) {
         q = std::floor((double)i / block_size);
         p = i - q * block_size;
 
@@ -67,7 +67,7 @@ int main(int argc, char** argv) {
 
     for (int i = 0; i != total_blocks; ++i) {
         b = oneD_version.col(i);
-        ADMM(A, x, b, lagrangian_param, relaxation_param, data);
+        ADMM(A, x, b, lagrangian_param, relaxation_param, data, i, total_blocks);
         one_D_rec.col(i) = A * x;
         one_D_error.col(i) = b - A * x;
         //++curr_iter;
@@ -87,5 +87,5 @@ int main(int argc, char** argv) {
 
     std::vector<int> compression_params;
     compression_params.push_back(CV_IMWRITE_PXM_BINARY);
-    imwrite("out.pbm", result, compression_params);
+    imwrite(argv[2], result, compression_params);
 }

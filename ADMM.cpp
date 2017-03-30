@@ -8,29 +8,21 @@
 
 using namespace cv;
 
-struct Block_data {
-    std::vector<double> value;
-    std::vector<double> primal_rest_norm;
-    std::vector<double> dual_rest_norm;
-    std::vector<double> tolerance_primal;
-    std::vector<double> tolerance_dual;
-};
-
 Mat take_max(Mat a, double b) {
     return max(0, a - b) - max(0, -a - b);
 }
 
-void ADMM(Mat A, Mat &x, Mat b, double lagrangian_param, double relaxation_param, Block_data &data) {
+void ADMM(Mat A, Mat &x, Mat b, double lagrangian_param, double relaxation_param, Block_data &data, int i, int total_blocks) {
     Mat D, R, w, Rtr;
     Mat Atr = Mat::zeros(A.cols, A.rows, CV_64F);
     double ABSTOL, RELTOL;
     int m, n;
 
     int iters = 200;
-    //ABSTOL = 1e-4;
-    ABSTOL = std::pow(10, -4);
-    //RELTOL = 1e-2;//change
-    RELTOL = std::pow(10, -2);
+    ABSTOL = 1e-4;
+    //ABSTOL = std::pow(10, -4);
+    RELTOL = 1e-2;//change
+    //RELTOL = std::pow(10, -2);
     m = A.rows;//check docs!
     n = A.cols;
 
@@ -49,10 +41,11 @@ void ADMM(Mat A, Mat &x, Mat b, double lagrangian_param, double relaxation_param
     //      "r norm", "eps pri", "s norm", "eps dual", "objective") ;
     //}
     transpose(A, Atr);
+    Mat temp = Atr * A;
+    Cholesky(temp, R);
     transpose(R, Rtr);
-    Cholesky(Atr * A, R);
-
     for (int k = 0; k != iters; ++k) {
+        
         solve(Rtr, Atr * (b + z - u), x1);
         solve(R, x1, x);
 
@@ -69,15 +62,16 @@ void ADMM(Mat A, Mat &x, Mat b, double lagrangian_param, double relaxation_param
                                                                            std::max(norm(-z, NORM_L2, noArray()),
                                                                                     norm(b, NORM_L2, noArray())));
         data.tolerance_dual[k] = std::sqrt(n) * ABSTOL + RELTOL * norm(lagrangian_param * Atr * u, NORM_L2, noArray());
-
-        std::cout << data.primal_rest_norm[k] << "\t"
+        std::cout << "block " << i << "/" << total_blocks << "\t"
+                  //<< "iter " << k << "/" << iters << "\t"
+                  << data.primal_rest_norm[k] << "\t"
                   << data.tolerance_primal[k] << "\t"
                   << data.dual_rest_norm[k] << "\t"
                   << data.tolerance_dual[k] << "\t"
-                  << data.value[k] << "\n";
+                  << data.value[k] << std::endl;
 
-        if (history.primal_rest_norm[k] < history.tolerance_primal[k] &&
-            history.dual_rest_norm[k] < history.tolerance_dual[k]) {
+        if (data.primal_rest_norm[k] < data.tolerance_primal[k] &&
+            data.dual_rest_norm[k] < data.tolerance_dual[k]) {
             break;
         }
     }

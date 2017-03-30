@@ -25,7 +25,7 @@ Mat im2col(Mat &input, int block_size) {
 
 /*vice versa to im2col*/
 Mat col2im(Mat &input, int block_size, int height, int width) {
-    int size = input.rows * input.cols, column = 0;
+    int column = 0;
     Mat result = Mat::zeros(height, width, CV_64F);
 
     for (int x = 0; x != width; x += block_size) {

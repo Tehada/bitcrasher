@@ -18,4 +18,4 @@ cv::Mat im2col(cv::Mat &input, int block_size);
 
 cv::Mat col2im(cv::Mat &input, int block_size, int height, int width);
 
-void lad_admm(cv::Mat A, cv::Mat b, double rho, double alpha, History &history, cv::Mat &x_estimate);
+void ADMM(cv::Mat A, cv::Mat &x, cv::Mat b, double lagrangian_param, double relaxation_param, Block_data &data, int i, int total_blocks);

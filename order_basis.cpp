@@ -8,7 +8,7 @@ using namespace cv;
 Mat order_basis_functions(int size) {
     int num_dia, number, k;
     //double number_previous_elements, number;
-    unsigned int x, y;
+    int x, y;
     Mat result = Mat::zeros(size, size, CV_32S);
 
     for (k = 1; k != size + 1; ++k) {
