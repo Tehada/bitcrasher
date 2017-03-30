@@ -75,10 +75,6 @@ https://jwilk.net/software/didjvu и др.
 
 ----
 
-* expectation-maximization algorithm -- 
-
-* k-nearest neighbor classifier -- machine learning algorithm (Rocchio algorythm).
-
 [opencv]: http://opencv.org
 [opencv ubuntu]: http://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/
 [opencv os x]: http://www.pyimagesearch.com/2015/06/15/install-opencv-3-0-and-python-2-7-on-osx/
