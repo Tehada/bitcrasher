@@ -30,12 +30,20 @@
 
 В [image][first] собраны все тестовые результаты. Директория [original][second] содержит исходные изображения в формате pgm. В директории [djvulibre][third] результат работы утилиты [cpaldjvu][fourth] в формате pbm. В том же формате хранятся результаты работы simpledjvu и bitcrasher в [simpledjvu][fifth] и [bitcrasher][sixth]. В [compare][seventh] содержатся склеенные изображения пониженного качества, но небольшого размера.
 
-### Задачи на будущее (в порядке приоритета, уровень сложности указан в скобках)
+### Задачи на следующий месяц
+
+(в порядке приоритета, уровень сложности указан в скобках)
 
 * реализовать без использования тяжеловесной opencv (_средний_)
 * научиться передавать полученное бинарное изображение в djvulibre (_средний_)
+* добавить распознавание текста (_средний_)
 * добавить работу с изображениями любых размеров (сейчас **Bitcrasher** подгоняет размер под кратный 64) (_высокий_)
+* добавить парсер параметров (_легкий_)
 * провести более детальное исследование теоретической составляющей алгоритма (_средний_)
+
+### Ссылки
+
+Полное писание алгоритма на английском можно найти [здесь][description]
 
 ------------ Comments (A.S.) ---------
 
@@ -67,21 +75,13 @@ https://jwilk.net/software/didjvu и др.
 
 * k-nearest neighbor classifier -- machine learning algorithm (Rocchio algorythm).
 
-
 [opencv]: http://opencv.org
 [opencv ubuntu]: http://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/
 [opencv os x]: http://www.pyimagesearch.com/2015/06/15/install-opencv-3-0-and-python-2-7-on-osx/
 
-
-
 [djvu]: https://www.researchgate.net/publication/220051065_High_quality_document_image_compression_with_DjVU
-
-
 [LAD]: https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%BD%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B8%D1%85_%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D0%B5%D0%B9
-
 [FGKA]: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC543472/
-
-
 [first]: https://github.com/Tehada/Bitcrasher/tree/master/images
 [second]: https://github.com/Tehada/Bitcrasher/tree/master/images/original
 [third]: https://github.com/Tehada/Bitcrasher/tree/master/images/djvulibre
@@ -89,6 +89,5 @@ https://jwilk.net/software/didjvu и др.
 [fifth]: https://github.com/Tehada/Bitcrasher/tree/master/images/simpledjvu
 [sixth]: https://github.com/Tehada/Bitcrasher/tree/master/images/bitcrasher
 [seventh]: https://github.com/Tehada/Bitcrasher/tree/master/images/compare
-
-
 [ADMM]: https://web.stanford.edu/~boyd/papers/admm
+[description]: https://arxiv.org/pdf/1607.02547.pdf
