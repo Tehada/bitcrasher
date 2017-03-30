@@ -1,6 +1,6 @@
 ## Bitcrasher 
 
-Алгоритм для отделения текста от фона на `pgm` изображениях.
+Алгоритм разделения текста и фона на `pgm` изображениях.
 
 ### Установка
 
@@ -8,9 +8,11 @@
 
 ### Использование
 
-`./bitcrasher input.pgm output.pbm` Регулировка параметров будет добавлена в ближайшее время.
+`./bitcrasher input.pgm output.pbm`
 
-### Принцип работы Bitcrasher
+### Описание Bitcrasher
+
+В djvu разделение основано на [hierarchical clustering][djvu]
 
 Фон чаще всего можно представить в виде комбинации линейных функций, которыми нельзя описать пиксели текста. 
 
@@ -31,15 +33,6 @@
 ![alt tag](https://github.com/Tehada/Bitcrasher/blob/master/images/compare/1.jpg)
 
 В [image][first] собраны все тестовые результаты. Директория [original][second] содержит исходные изображения в формате pgm. В директории [djvulibre][third] результат работы утилиты [cpaldjvu][fourth] в формате pbm. В том же формате хранятся результаты работы simpledjvu и bitcrasher в [simpledjvu][fifth] и [bitcrasher][sixth]. В [compare][seventh] содержатся склеенные изображения пониженного качества, но небольшого размера.
-
-[opencv]: http://opencv.org
-[opencv ubuntu]: http://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/
-[opencv os x]: http://www.pyimagesearch.com/2015/06/15/install-opencv-3-0-and-python-2-7-on-osx/
-
-
-
-
-
 
 
 
@@ -70,14 +63,18 @@ https://jwilk.net/software/didjvu и др.
 
 ----
 
-Возможные альтернативы:
-
-* Улучшения k-means clustering, который встроен в djvulibre
-
 * expectation-maximization algorithm -- 
 
 * k-nearest neighbor classifier -- machine learning algorithm (Rocchio algorythm).
 
+
+[opencv]: http://opencv.org
+[opencv ubuntu]: http://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/
+[opencv os x]: http://www.pyimagesearch.com/2015/06/15/install-opencv-3-0-and-python-2-7-on-osx/
+
+
+
+[djvu]: https://www.researchgate.net/publication/220051065_High_quality_document_image_compression_with_DjVU
 
 
 [LAD]: https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%BD%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B8%D1%85_%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D0%B5%D0%B9
