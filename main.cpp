@@ -78,7 +78,7 @@ int main(int argc, char** argv) {
     err_image = col2im(one_D_error, block_size, height, width);
 
     /*threshold result and save*/
-    double thresh = 14, maxval = 255; //unsigned??
+    double thresh = 30, maxval = 255; //unsigned??
     Mat map = abs(err_image), result;
     map.convertTo(map, CV_32F);
     threshold(map, result, thresh, maxval, THRESH_BINARY);
