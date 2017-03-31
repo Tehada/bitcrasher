@@ -29,7 +29,7 @@
 В левом верхнем углу оригинальное изображение, далее по часовой стрелке: djvulibre, bitcrasher, simpledjvu.
 
 <p align="center">
-  <img src="https://github.com/Tehada/Bitcrasher/blob/master/images/compare/example.jpg"/>
+  <img src="https://github.com/Tehada/Bitcrasher/blob/master/images/example.jpg"/>
 </p>
 
 В [image][first] собраны все тестовые результаты. Директория [original][second] содержит исходные изображения в формате pgm. В директории [djvulibre][third] результат работы утилиты [cpaldjvu][fourth] в формате pbm. В том же формате хранятся результаты работы simpledjvu и bitcrasher в [simpledjvu][fifth] и [bitcrasher][sixth]. В [compare][seventh] содержатся склеенные изображения пониженного качества, но небольшого размера.
@@ -47,6 +47,7 @@
 
 ### Ссылки
 
+[Папка][drive] с изображениями. 
 Полное писание алгоритма на английском можно найти [здесь][description]
 
 ### Комментарии ментора
@@ -92,3 +93,4 @@ https://jwilk.net/software/didjvu и др.
 [seventh]: https://github.com/Tehada/Bitcrasher/tree/master/images/compare
 [ADMM]: https://web.stanford.edu/~boyd/papers/admm
 [description]: https://arxiv.org/pdf/1607.02547.pdf
+[drive]: https://drive.google.com/drive/folders/0BzrEqXjuNqPKV0FCZUlRaWFIbEE?usp=sharing
